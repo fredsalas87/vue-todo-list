@@ -2,7 +2,6 @@
 <div>
   <v-col
     cols="12"
-    sm="6"
   >
     <v-text-field
       v-model="entradaTarefas"
@@ -21,7 +20,7 @@
     active-class=""
   >
   <div 
-    v-for="tarefa, index in tarefas" 
+    v-for="tarefa, index in $store.state.tarefas" 
     :key="index">
     <Tarefa 
       :tarefa="tarefa"
@@ -42,20 +41,11 @@ export default {
   },
   data: () => ({
     entradaTarefas: '',
-    tarefas: [
-      {titulo: 'Ir ao mercado', concluido: false}
-    ]
   }),
   methods: {
     adicionarTarefa() {
-      if(this.entradaTarefas){
-        this.tarefas.push({
-          titulo: this.entradaTarefas,
-          concluido: false
-        })
-
+      this.$store.commit('adicionarTarefa', this.entradaTarefas),
       this.entradaTarefas = null
-      }
     }
   }
 }
