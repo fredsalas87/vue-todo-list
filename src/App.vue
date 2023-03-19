@@ -4,6 +4,20 @@
     v-model="drawer" 
     app
     >
+    <v-img
+      src="./assets/pg.jpg"
+      dark
+      gradient="to top right, rgba(19,84,122,.5), rgba(28,108,199,.8)"
+      class="pt-5 text-center"
+    >
+      <v-avatar
+        size="100"
+      >
+        <img
+          src="./assets/Web Dev Google Sunset Web conheça.jpg"
+          alt="dev"
+        >
+      </v-avatar>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6">
@@ -14,6 +28,7 @@
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
+    </v-img>
 
       <v-divider></v-divider>
 
@@ -54,21 +69,6 @@
 
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title>Title</v-app-bar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -80,7 +80,7 @@
 <script>
   export default {
     data: () => ({ 
-      drawer: null,
+      drawer: false,
       items: [
           { title: 'Tarefas', icon: 'mdi-view-dashboard', to: '/' },
           { title: 'Sobre', icon: 'mdi-help-box', to: '/sobre' },
